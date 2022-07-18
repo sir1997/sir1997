@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>发表文章</title>
+        <link href="../static/go_problem.css" rel="stylesheet">
+       
+    </head>
+    <body>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+          
+            <div class="dao_han">
+                <a href="text" class="aone"><h3>个人中心</h3></a>
+                <a class="dao_han_title" href="home"><h3>首页</h3></a>
+            </div>
+          
+            <div>
+                <div class="sub_wps">
+                 
+                        <div class="set">
+                            {{ range $v:= .}}
+                        <div class="title_set">{{$v.Title}} </div>
+                        <div class="content">{{$v.Content}}</div>
+                        <p class="information">
+                            <button type="button" class="like" name="like"><img class="a" src="../static/OIP-A.jpg">{{$v.Like}}</button>
+                            <button type="button" class="comment" name="comment"><img class="b" src="../static/OPI- B.jpg">{{$v.Comment}}</button>
+                            <span><img class="c" src="../static/OIP-C (1).jpg">{{$v.Count}}</span>
+                            <button type="button" class="collect" name="collect"><img class="d" src="../static/OPI-D.jpg">{{$v.Collect}}</button>
+                        {{ end }}
+                        </p> 
+                     
+                       
+                      </div>
+
+            </div>
+    </div>
+    </body>
+</html>

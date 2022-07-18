@@ -1,0 +1,11 @@
+div.answer_comment{
+   position: absolute;
+   width: 500px;
+   height: 400px;
+   background-color: chartreuse;
+}
+
+div.author{
+    position: absolute;
+    right: 0px;
+}

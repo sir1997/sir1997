@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>发表文章</title>
+        <link href="../static/text.css" rel="stylesheet">
+    </head>
+    <body>
+      
+        
+  <div class="dao_han">
+    
+    <a href="home"><h3>首页</h3></a>
+  </div>
+         <form>
+          <div class="total">
+            <input class="title_create" name="title" placeholder="文章标题">
+               
+                <textarea class="test_su" style="resize:none " cols="100px"  rows="20px" name="content"></textarea>
+               
+                <p class="dan_kuang">
+                    <h4 style="color:rgba(240, 228, 228, 0.533);">文章分类：</h4>
+                    <input type="radio" value="problem" name="sex">GO常见问题
+                    <input type="radio" value="study" name="sex">GO基础学习
+                    <input type="radio" value="bottom" name="sex">GO底层实现
+                    <input type="radio" value="think" name="sex">GO逻辑思维图谱
+                    <input type="radio" value="moddel" name="sex">GO代码模块
+                </p>
+                <input class="lut" type="submit" value="确认">
+          </div>
+         </form>
+
+         <div class="marrage">
+          <div class="head_photo"></div>
+          <span>tang_SIRE</span>
+          <div class="collect">我的收藏</div>
+          <form>
+          <div class="my_message">
+            <span>{{.author}}:{{.com}}</span>
+          <input class="username_author" name="author" placeholder="输入发送消息对象">
+            <textarea class="xaioxi" cols="72px"  rows="5px" name="communcation">发送消息</textarea>
+          </div>
+          <input class="lut_incre" type="submit" value="确认">
+          </form>
+         </div>
+</body>
+</html>

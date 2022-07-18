@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>发表文章</title>
+        <link href="../static/detailed.css" rel="stylesheet">
+
+        <script type="text/jscript">
+         
+            function show(){
+            //显示div
+             document.getElementById("form").style.display="block";        
+            //隐藏
+          //document.getElementByID("form").style.display="none";
+       
+             } 
+              
+             function save(){
+                alert("评论成功")
+                
+             }
+     
+     
+            </script>   
+       
+    </head>
+    <body>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+          
+        <div> 
+            <div class="dao_han">
+                <a href="text" class="aone"><h3>个人中心</h3></a>
+                <a class="dao_han_title" href="home"><h3>首页</h3></a>
+            </div>
+          
+           
+                <div class="sub_wps">
+                       
+                        <div class="set">
+                        
+                        <div class="title_set">{{.val.Title}} </div>
+                        <div class="content">{{.val.Content}}</div>
+                        <p class="information">
+                           <a href="detailed?like={{.val.Like}}&title={{.val.Title}}">点赞：{{.val.Like}}</a>
+                           <a href="detailed?comment={{.val.Count}}">浏览：{{.val.Count}}</a>
+                           <a href="detailed?collect={{.val.Username}}&title={{.val.Title}}">收藏：{{.val.Collect}}</a>
+                           
+                           <button class="oneonclike" onclick="show()"><h3>评论：{{.commentcount}}</h3></button>
+                           <form id ="form" style="display:none;">
+                              <div>
+                                  <textarea class="comment_CM" name="comment" id="name" style="resize:none"></textarea>
+                                  <input class="onclike" type="submit" placeholder="提交">
+                                 
+                              </div>   
+                              
+                           </form>
+
+                        </p> 
+                        </div>
+                      
+                </div>
+
+        </div>
+        <div class="comment">
+            {{ range $v := .comment }}
+            <p>{{$v.Username}}:{{$v.Comment}}</p>
+            {{ end }}
+
+        </div>
+       
+
+    </div>
+    </body>
+</html>

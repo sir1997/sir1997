@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+      
+        <title>GO</title>
+        <link href="../static/home.css" rel="stylesheet">
+
+    </head>
+ <body>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="dao_han">
+        <a href="text" class="aone"><h3>个人中心</h3></a>
+
+    </div>
+    <div class="sub_was">
+        
+        <div class="sub_wab">
+            <form action="text_go" method="get" name="myform" >
+                <input class="sub" type="text" name="username" >
+                <div>
+                    <input class="sus" type="submit" value=""><p class="ke_lai">点击我搜索哟！</p>
+                </div>
+            </form>
+         </div>
+        </div>
+    
+        <div class="sub_weu">
+    
+           <div class="sub_wer">
+            <p class="go_problam"><a href="home/problem?classify=problem">GO常见问题</a></p> 
+            <p class="go_study"><a href="home/study?classify=study">GO基础学习</a></p>
+            <p class="go_bottom"><a href="home/bottom?classify=bottom">GO底层实现</a></p>
+            <p class="go_think"><a href="home/think?classify=think">GO逻辑思维图谱</p>
+            <p class="go_sores"><a href="home/model?classify=moddel">GO代码模块</a></p>
+          </div>
+    
+           <div class="sub_wps" >
+           {{ range $v := . }}
+                <div class="set">
+                <div type="text" class="article_set">{{$v.Title}} </div>
+               <a href="/home/detailed?title={{$v.Title}}"><div class="quoto">{{$v.Content}}</div></a>
+                <p class="username" >{{$v.Username}} {{$v.Time}}</p> 
+            
+               
+                <a href="/home?priverpage=下一页" class="priverpage"><h3>上一页</h3></a>
+               
+                <a href="/home?pagenext=下一页" class="pagenext"><h3>下一页</h3></a>
+                {{ end }}
+        </div>
+       
+ </body>
+ 
+</html>
+
